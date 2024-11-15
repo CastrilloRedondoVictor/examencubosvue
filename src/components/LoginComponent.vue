@@ -91,7 +91,7 @@
     },
     computed: {
       isLogged() {
-        return cubosService.isLogged(); // Si usas Vuex para almacenar si el usuario está autenticado
+        return cubosService.isLogged();
       }
     },
     methods: {
@@ -120,8 +120,4 @@
     }
   };
   </script>
-  
-  <style scoped>
-  /* Aquí puedes agregar tus estilos personalizados */
-  </style>
   

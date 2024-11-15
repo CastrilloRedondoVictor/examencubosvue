@@ -28,41 +28,36 @@
   </template>
   
   <script>
-  import CubosService from '@/services/CubosService'; // Asegúrate de tener este servicio importado
+  import CubosService from '@/services/CubosService';
   var cubosService = new CubosService()
   
   export default {
     data() {
       return {
-        cubos: [], // Lista de cubos
-        cubo: 1 // Valor predeterminado para el cubo seleccionado
+        cubos: [],
+        cubo: 1
       };
     },
     methods: {
       async getCubos() {
         try {
           const response = await cubosService.getCubos();
-          this.cubos = response.data; // Suponiendo que la respuesta contiene un array de cubos
+          this.cubos = response.data;
         } catch (error) {
           console.error('Error al obtener los cubos:', error);
         }
       },
       async onSubmit() {
         try {
-          await cubosService.postPedido(this.cubo); // Enviar el cubo seleccionado para realizar el pedido
-          this.$router.push('/compras'); // Redirigir al usuario a la página de compras
+          await cubosService.postPedido(this.cubo);
+          this.$router.push('/compras');
         } catch (error) {
           console.error('Error al realizar el pedido:', error);
         }
       }
     },
     created() {
-      this.getCubos(); // Llamar al método para obtener los cubos cuando el componente se crea
+      this.getCubos();
     }
   };
   </script>
-  
-  <style scoped>
-  /* Puedes agregar tus estilos personalizados aquí */
-  </style>
-  

@@ -44,7 +44,6 @@
       this.getCubos();
     },
     updated() {
-      // Al crear el componente, obtenemos los cubos
       
       this.getCubos();
     },
@@ -53,7 +52,7 @@
         this.marca = this.$route.params.marca;
         try {
           const response = await cubosService.getCubosMarca(this.marca);
-          this.cubos = response.data; // 'data' es la respuesta de Axios
+          this.cubos = response.data;
         } catch (error) {
           console.error('Error al obtener cubos:', error);
         }
@@ -63,7 +62,6 @@
   </script>
   
   <style scoped>
-  /* Puedes agregar estilos personalizados aquí si es necesario */
   .card {
     margin-bottom: 20px;
   }

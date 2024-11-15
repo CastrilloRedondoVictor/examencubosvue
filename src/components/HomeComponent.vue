@@ -35,18 +35,17 @@
   export default {
     data() {
       return {
-        cubos: [], // Array de cubos
+        cubos: [],
       };
     },
     mounted() {
-      // Al crear el componente, obtenemos los cubos
       this.getCubos();
     },
     methods: {
       async getCubos() {
         try {
           const response = await cubosService.getCubos();
-          this.cubos = response.data; // 'data' es la respuesta de Axios
+          this.cubos = response.data;
         } catch (error) {
           console.error('Error al obtener cubos:', error);
         }
@@ -56,7 +55,6 @@
   </script>
   
   <style scoped>
-  /* Puedes agregar estilos personalizados aquí si es necesario */
   .card {
     margin-bottom: 20px;
   }

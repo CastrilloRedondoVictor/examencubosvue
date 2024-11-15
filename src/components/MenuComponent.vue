@@ -145,9 +145,7 @@
         return this.$route.path === route;
       },
       logOut() {
-        // Eliminar el token de acceso
         localStorage.removeItem('access_token');
-        // Redirigir a login
         this.$router.push('/login');
       },
     },
@@ -169,8 +167,4 @@
     }
   };
   </script>
-  
-  <style scoped>
-  /* Estilos opcionales para personalizar la apariencia */
-  </style>
   

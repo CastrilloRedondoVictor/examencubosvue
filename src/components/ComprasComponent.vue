@@ -32,7 +32,7 @@
   </template>
   
   <script>
-  import CubosService from '@/services/CubosService'; // Asegúrate de importar el servicio correcto
+  import CubosService from '@/services/CubosService';
   var cubosService = new CubosService()
   
   export default {
@@ -45,19 +45,14 @@
       async getCompras() {
         try {
           const response = await cubosService.getCompras();
-          this.compras = response.data; // Asumiendo que la respuesta es un array de compras
+          this.compras = response.data;
         } catch (error) {
           console.error('Error al obtener las compras:', error);
         }
       }
     },
     created() {
-      this.getCompras(); // Se llama al obtener las compras cuando el componente se crea
+      this.getCompras();
     }
   };
   </script>
-  
-  <style scoped>
-  /* Puedes agregar tus estilos personalizados aquí */
-  </style>
-  
